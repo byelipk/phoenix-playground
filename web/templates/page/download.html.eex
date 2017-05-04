@@ -1,3 +1,5 @@
 <p><%= @pdf_path %></p>
 <p><%= @view_module %></p>
 <p><%= @view_template %></p>
+
+<canvas id="the-canvas" width="300" height="300"></canvas>
