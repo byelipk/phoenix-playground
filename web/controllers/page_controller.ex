@@ -1,6 +1,8 @@
 defmodule Playground.PageController do
   use Playground.Web, :controller
 
+  alias Playground.{Router, Endpoint}
+
   def index(conn, _params) do
     render conn, "index.html"
   end
@@ -22,18 +24,17 @@ defmodule Playground.PageController do
   end
 
   def download(conn, %{"id" => "binary"}) do
-    send_file conn, 200, pdf_path()
+    send_file conn, 200, Application.app_dir(:playground, "priv/hello.pdf")
   end
 
   def download(conn, %{"id" => "download"}) do
-    send_download conn, {:file, pdf_path()}, filename: "hello.pdf"
+    send_download conn, {:file,
+      Application.app_dir(:playground, "priv/hello.pdf")}, filename: "hello.pdf"
   end
 
   def download(conn, %{"id" => "render"}) do
-    render conn, "download.html", pdf_path: pdf_path()
+    render conn, "download.html",
+      pdf_path: Router.Helpers.static_path(Endpoint, "/hello.pdf")
   end
 
-  defp pdf_path() do
-    Application.app_dir(:playground, "priv/hello.pdf")
-  end
 end
