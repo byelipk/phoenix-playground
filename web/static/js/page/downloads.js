@@ -1,6 +1,6 @@
 export var Page = {
   run: function() {
-    console.log("HELLO PDF PAGE! fuck");
+    console.log("HELLO PDF PAGE! Eliminate the swearing");
     let w = new Worker("js/my_worker.js");
 
     w.onmessage = function cb(event) {
