@@ -1,0 +1,5 @@
+<h1>Play Areas</h1>
+
+<ul>
+  <li><%= link "MIME Types", to: page_path(@conn, :downloads) %></li>
+</ul>

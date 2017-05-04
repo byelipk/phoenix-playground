@@ -1,0 +1,3 @@
+<p><%= @pdf_path %></p>
+<p><%= @view_module %></p>
+<p><%= @view_template %></p>

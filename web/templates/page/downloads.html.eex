@@ -1,0 +1,8 @@
+<ul>
+  <li><%= link "Text", to: page_path(@conn, :download, "text") %></li>
+  <li><%= link "JSON", to: page_path(@conn, :download, "json") %></li>
+  <li><%= link "HTML", to: page_path(@conn, :download, "html") %></li>
+  <li><%= link "Binary", to: page_path(@conn, :download, "binary") %></li>
+  <li><%= link "Download", to: page_path(@conn, :download, "download") %></li>
+  <li><%= link "Render", to: page_path(@conn, :download, "render") %></li>
+</ul>
